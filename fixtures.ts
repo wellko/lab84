@@ -14,8 +14,6 @@ const run = async () => {
 		console.log('Collections were not present, skipping drop...');
 	}
 
-
-
 	const [user1, user2] = await User.create({
 		username: "first user",
 		password: "firstPass",
@@ -25,8 +23,6 @@ const run = async () => {
 		password: "secondPass",
 		token: crypto.randomUUID()
 	});
-
-
 
 	await Task.create({
 		title: "first task",

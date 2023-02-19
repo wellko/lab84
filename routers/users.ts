@@ -35,6 +35,4 @@ usersRouter.post('/sessions', async (req, res) => {
 	return res.send({message: 'Username and password correct!', user});
 });
 
-
-
 export default usersRouter;
