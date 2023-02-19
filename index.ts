@@ -2,13 +2,14 @@ import mongoose from 'mongoose';
 import express from 'express';
 import cors = require("cors");
 import usersRouter from "./routers/users";
+import tasksRouter from "./routers/tasks";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 const port = 8000;
 app.use('/users', usersRouter);
-
+app.use('/tasks', tasksRouter);
 
 const run = async () => {
 	mongoose.set('strictQuery', false);
