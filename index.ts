@@ -3,6 +3,7 @@ import express from 'express';
 import cors = require("cors");
 import usersRouter from "./routers/users";
 import tasksRouter from "./routers/tasks";
+import config from "./config";
 
 const app = express();
 app.use(cors());
@@ -13,7 +14,7 @@ app.use('/tasks', tasksRouter);
 
 const run = async () => {
 	mongoose.set('strictQuery', false);
-	await mongoose.connect('mongodb://localhost/toDo');
+	await mongoose.connect(config.db);
 	app.listen(port, () => {
 		console.log(`Server started on ${port} port!`);
 	});
